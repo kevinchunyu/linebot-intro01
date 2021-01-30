@@ -1,3 +1,5 @@
+// requires
+// Using express, linebot, and dotenv for code development
 const express = require('express')
 const app = express()
 const linebot = require('linebot');
@@ -6,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
  require('dotenv').config()
 }
 
+// bot linebot information
 const bot = linebot({
   channelId: '1655623292',
   channelSecret: '878ea3b73da5839afdf76fc88e68031b',
