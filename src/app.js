@@ -18,12 +18,15 @@ const bot = linebot({
 const linebotParser = bot.parser();
 
 bot.on('message', function (event) {
- console.log(event);event.reply(event.message.text).then(function (data) {
-   // success
- }).catch(function (error) {
-   // error
-   console.log("Error is", error);
- });
+ if (event.message.text == 'about') {
+   event.reply("check if this works");
+ }
+//  event.reply(event.message.text).then(function (data) {
+//    // success
+//  }).catch(function (error) {
+//    // error
+//    console.log("Error is", error);
+//  });
 });
 
 app.post('/', linebotParser);
