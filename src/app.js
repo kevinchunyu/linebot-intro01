@@ -18,9 +18,12 @@ const bot = linebot({
 const linebotParser = bot.parser();
 
 bot.on('message', function (event) {
- if (event.message.text == 'about') {
-   event.reply("check if this works");
- }
+  if (event != null) {
+    help(event);
+    links(event);
+  } else {
+    event.reply({type: 'text', text: 'command not known, please refer to "help" in order to know what to type'})
+  }
 //  event.reply(event.message.text).then(function (data) {
 //    // success
 //  }).catch(function (error) {
@@ -28,6 +31,24 @@ bot.on('message', function (event) {
 //    console.log("Error is", error);
 //  });
 });
+
+function help(event) {
+  if(event.message.text == 'help') {
+    event.reply([
+      {type : 'text', text : "about"},
+      {type : 'text', text : "online profiles"},
+      {type : 'text', text : "story time"},
+      {type : 'text', text : "experiences"}
+    ])
+  }
+}
+
+// function to detect online profiles
+function links(event) {
+  if(event.message.text == 'online profiles') {
+    event.reply({type: "text", text : "https://github.com/kevinchunyu"});
+  }
+}
 
 app.post('/', linebotParser);
 app.listen(process.env.PORT || 8000, () => {
