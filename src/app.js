@@ -50,7 +50,7 @@ function promote(event) {
   if(event.message.text == 'tell me more about him') {
     event.reply({
       type: 'imagemap',
-      baseUrl: 'https://github.com/kevinchunyu/linebot-intro01/blob/main/imgs/imagemap01',
+      baseUrl: 'https://github.com/kevinchunyu/linebot-intro01/tree/main/imgs',
       altText: 'self-promote',
       baseSize: { height: 1040, width: 1040 },
       actions: [{
