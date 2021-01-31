@@ -4,9 +4,9 @@ const express = require('express')
 const app = express()
 const linebot = require('linebot');
 
-if (process.env.NODE_ENV !== 'production') {
- require('dotenv').config()
-}
+// if (process.env.NODE_ENV !== 'production') {
+//  require('dotenv').config()
+// }
 
 // bot linebot information
 const bot = linebot({
@@ -21,61 +21,70 @@ console.log(baseURL);
 const linebotParser = bot.parser();
 
 bot.on('message', function (event) {
-  // change if else loop here, does not handle the DNE correctly
-  if (event.message.text.length > 0) {
-    // help(event);
-    promote(event);
-  } else {
-    event.reply({type: 'text', text: 'command not known, please refer to "help" in order to know what to type'})
+  switch(event.message.text) {
+    case 'hello, tell me more about him!':
+      event.reply([
+        {type: 'text', text: "Hello! As Kevin's bot, I would like to introduce you to why he his valuable to the team and what he brings."},
+        {type: 'text', text: "I will use four words to describe his traits, and for four of these words, you can enter a message and read more."},
+        {type: 'text', text: "1. Passionate\n2. Diversity\n3. Motivated\n4. Team Orientated"}
+      ])
+      break;
+    case 'passionate':
+      event.reply("In whatever he does, his motto is: 'If you are going to commit yourself into something, then strive to do the best of your ability at that.'");
+      event.reply("Majoring in GIS: Data Science brings a different exprience unlike Computer Science. What he learns brings about the considerations of social aspects\
+                   and perspectives. Through that, he has passionately looked for open opportunities to work with professors. As mentioned, he has developed on a project\
+                   to update course materials using HTML, CSS, and JS. Furthermore, he has also gained an opportunity to join the HGIS lab for the upcoming quarter. Further\
+                   information of this lab can be found on this website: https://hgis.uw.edu/.");
+      break;
+    case 'diversity':
+      event.reply("Kevin was raised in a Taiwanese family in Indonesia for his whole life before going to university. Because of this, he has picked up speaking\
+                   Bahasa Indonesia, the official language of Indonesia, but also is natively fluent in Chinese. Growing up in an small, close-knitted Christian\
+                   international school (https://www.baisedu.org/) , he has also gained exposure to many different kinds of people from all around the world. He has the ability to bond, \
+                   communicate, and work with people from all different kinds of backgrounds.");
+      break;
+    case 'motivated':
+      event.reply("Looking through possible career paths, Kevin is currently at a stage in which he is motivated to use his abilities that has accumulated in class to\
+                  bring an impact to the world. His unfaltering work ethic and motivation can be reflected through his solid GPA whilst managing a student\
+                  organization during his student careeer.");
+      break;
+    case 'team-orientated':
+      event.reply("Being the captain of the Varsity Basketball team in high school for two years, his sense of responsibility cannot be doubted. Being on a team that also\
+                   won two championships, one bronze, and one silver, he has developed a strong, mature, winning-mindset that is able to unite and lead a team. Serving\
+                   as a leader is the theme that he continuously reminds himself if put in a position to lead, whether it be in the classroom, work, or extracurriculars.");
+      break;
   }
-//  event.reply(event.message.text).then(function (data) {
-//    // success
-//  }).catch(function (error) {
-//    // error
-//    console.log("Error is", error);
-//  });
 });
 
-// function help(event) {
-//   if(event.message.text == 'help') {
-//     event.reply([
-//       {type : 'text', text : "about"},
-//       {type : 'text', text : "tell me more about him"},
-//       {type : 'text', text : "story time"},
-//       {type : 'text', text : "experiences"}
-//     ])
+// attempt to create an imagemap
+// question/bug noted in journal.md
+// note: make to lowercase to avoid case issues
+// function promote(event) {
+//   if(event.message.text == 'tell me more about him') {
+//     event.reply({
+//       type: 'imagemap',
+//       baseUrl: `https://github.com/kevinchunyu/linebot-intro01/tree/main/imgs`,
+//       altText: 'self-promote',
+//       baseSize: { height: 1040, width: 1040 },
+//       actions: [{
+//         type: 'message',
+//         text: 'passionate',
+//         area: { x: 0, y: 0, width: 520, height: 520 }
+//       }, {
+//         type: 'message',
+//         text: 'motivated',
+//         area: { x: 0, y: 520, width: 520, height: 520 }
+//       }, {
+//         type: 'message',
+//         text: 'diversity',
+//         area: {x: 520, y :0, width: 520, height: 520}
+//       }, {
+//         type: 'message',
+//         text: 'team-orientated',
+//         area: {x: 520, y : 520, width: 520, height: 520 }
+//       }]
+//     });
 //   }
 // }
-
-// function to detect online profiles
-// note: make to lowercase to avoid case issues
-function promote(event) {
-  if(event.message.text == 'tell me more about him') {
-    event.reply({
-      type: 'imagemap',
-      baseUrl: `https://github.com/kevinchunyu/linebot-intro01/tree/main/imgs`,
-      altText: 'self-promote',
-      baseSize: { height: 1040, width: 1040 },
-      actions: [{
-        type: 'message',
-        text: 'passionate',
-        area: { x: 0, y: 0, width: 520, height: 520 }
-      }, {
-        type: 'message',
-        text: 'motivated',
-        area: { x: 0, y: 520, width: 520, height: 520 }
-      }, {
-        type: 'message',
-        text: 'diversity',
-        area: {x: 520, y :0, width: 520, height: 520}
-      }, {
-        type: 'message',
-        text: 'team-orientated',
-        area: {x: 520, y : 520, width: 520, height: 520 }
-      }]
-    });
-  }
-}
 
 app.post('/', linebotParser);
 app.listen(process.env.PORT || 8000, () => {
