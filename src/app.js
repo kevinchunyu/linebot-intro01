@@ -50,7 +50,7 @@ function promote(event) {
   if(event.message.text == 'tell me more about him') {
     event.reply({
       type: 'imagemap',
-      baseUrl: 'imgs/imagemap01',
+      baseUrl: 'imgs/imagemap01.png',
       altText: 'self-promote',
       baseSize: { height: 1040, width: 1040 },
       actions: [{
