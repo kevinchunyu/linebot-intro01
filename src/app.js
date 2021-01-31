@@ -36,7 +36,7 @@ function help(event) {
   if(event.message.text == 'help') {
     event.reply([
       {type : 'text', text : "about"},
-      {type : 'text', text : "online profiles"},
+      {type : 'text', text : "tell me more about him"},
       {type : 'text', text : "story time"},
       {type : 'text', text : "experiences"}
     ])
@@ -44,9 +44,32 @@ function help(event) {
 }
 
 // function to detect online profiles
-function links(event) {
-  if(event.message.text == 'online profiles') {
-    event.reply({type: "text", text : "https://github.com/kevinchunyu"});
+// note: make to lowercase to avoid case issues
+function promote(event) {
+  if(event.message.text == 'tell me more about him') {
+    event.reply({
+      type: 'imagemap',
+      baseUrl: 'imgs/imagemap01',
+      altText: 'self-promote',
+      baseSize: { height: 1040, width: 1040 },
+      actions: [{
+        type: 'message',
+        text: 'passionate',
+        area: { x: 0, y: 0, width: 520, height: 520 }
+      }, {
+        type: 'message',
+        text: 'motivated',
+        area: { x: 0, y: 520, width: 520, height: 520 }
+      }, {
+        type: 'message',
+        text: 'diversity',
+        area: {x: 520, y :0, width: 520, height: 520}
+      }, {
+        type: 'message',
+        text: 'team-orientated',
+        area: {x: 520, y : 520, width: 520, height: 520 }
+      }]
+    });
   }
 }
 
