@@ -36,16 +36,16 @@ bot.on('message', function (event) {
 //  });
 });
 
-function help(event) {
-  if(event.message.text == 'help') {
-    event.reply([
-      {type : 'text', text : "about"},
-      {type : 'text', text : "tell me more about him"},
-      {type : 'text', text : "story time"},
-      {type : 'text', text : "experiences"}
-    ])
-  }
-}
+// function help(event) {
+//   if(event.message.text == 'help') {
+//     event.reply([
+//       {type : 'text', text : "about"},
+//       {type : 'text', text : "tell me more about him"},
+//       {type : 'text', text : "story time"},
+//       {type : 'text', text : "experiences"}
+//     ])
+//   }
+// }
 
 // function to detect online profiles
 // note: make to lowercase to avoid case issues
@@ -53,7 +53,7 @@ function promote(event) {
   if(event.message.text == 'tell me more about him') {
     event.reply({
       type: 'imagemap',
-      baseUrl: `${baseURL}/imgs`,
+      baseUrl: `https://github.com/kevinchunyu/linebot-intro01/tree/main/imgs/imagemap01`,
       altText: 'self-promote',
       baseSize: { height: 1040, width: 1040 },
       actions: [{
