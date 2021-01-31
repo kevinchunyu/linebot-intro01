@@ -22,7 +22,7 @@ const linebotParser = bot.parser();
 bot.on('message', function (event) {
   // change if else loop here, does not handle the DNE correctly
   if (event.message.text.length > 0) {
-    help(event);
+    // help(event);
     promote(event);
   } else {
     event.reply({type: 'text', text: 'command not known, please refer to "help" in order to know what to type'})
