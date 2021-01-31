@@ -15,7 +15,7 @@ const linebotParser = bot.parser();
 
 bot.on('message', function (event) {
   switch(event.message.text) {
-    case 'hello, tell me more about him!':
+    case 'tell me more about him':
       event.reply([
         {type: 'text', text: "Hello! As Kevin's bot, I would like to introduce you to why he his valuable to the team and what he brings."},
         {type: 'text', text: "I will use four words to describe his traits, and for four of these words, you can enter a message and read more."},
@@ -57,7 +57,7 @@ bot.on('message', function (event) {
       break;
     case 'help':
       event.reply("This is a SIMPLE BOT that promotes Kevin Ko. Here, there are not many functions, but I recommend you to start by entering:\n\
- hello, tell me more about him!\nin the chat, and I will guide you through. Please also keep in mind to enter the chat directly, as\
+ tell me more about him\nin the chat, and I will guide you through. Please also keep in mind to enter the chat directly, as\
  currently, this version of the BOT does not handle cases (lower & upper) as of just yet! Further instructions of the app can be found here: https://github.com/kevinchunyu/linebot-intro01");
       break;
     case 'contact-him':

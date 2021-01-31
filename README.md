@@ -10,10 +10,10 @@ This is a SIMPLE Line chatbot developed by Kevin Ko that is used to promote and 
 simple and easy to use.
 
 Listed below are a list of messages that you can type to find out more information about Kevin. It is recommended that you start with
-`hello, tell me more about him!` in the chat.
+`tell me more about him` in the chat.
 
 ### Messages to enter into chat:
-| `hello, tell me more about him!` | returns a text function containing information about Kevin Ko     |
+| `tell me more about him` | returns a text function containing information about Kevin Ko     |
 |----------------------------------|-------------------------------------------------------------------|
 | `passionate`                     | returns an event reply that talks about the passionate aspect     |
 | `diversity`                      | returns an event reply that talks about the diversity he brings   |
