@@ -4,6 +4,10 @@
 ***
 Hello! My name is Kevin Ko, currently a Junior at the University of Washington-Seattle, studying both GIS:Data Science and Informatics. Specifically, GIS: Data Science explores data management, data visualiation, and societal implications of data science in a geographical setting. Informatics, on the other hand, explores the interaction between technology and human. Using that interaction to serve as a bridge to motivate and encourage innovation, creativity, and design of technology.
 
+In order to use this BOT, please add this line QR CODE!   
+
+!["image"](imgs/line_qrcode.png)
+
 ## Documentation & Help
 ***
 This is a SIMPLE Line chatbot developed by Kevin Ko that is used to promote and tell about himself. This bot does not provide a lot of functions and message types, as everything is kept
