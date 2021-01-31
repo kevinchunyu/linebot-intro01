@@ -15,7 +15,8 @@ const bot = linebot({
   channelAccessToken: 'tpet8lw5YNWo94OACtnY4b5Wro6rKjghAXXROKIY71tBHau9XMwjmxxQn+kr+fDkt9F3YTS8i8mNsqZwFK4EJkhmj6263yuYrZQOgbYeLqUZ1TwN/xErdHRNYSWpVf+ohUjLsSNgocpyxXQNICW4qAdB04t89/1O/w1cDnyilFU='
 });
 
-let baseURL = process.env.BASE_URL;
+const baseURL = process.env.BASE_URL;
+console.log(baseURL);
 
 const linebotParser = bot.parser();
 
