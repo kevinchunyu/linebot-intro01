@@ -28,7 +28,17 @@
 
 `1-31-2021`
 - Development day part 2, hopefully I finish today!
-- 
+- Looked thoroughly into imagemaps but still could not find out how to properly get the image to load.
+- Bugs:
+    - **[UNFIXED]** `app.js`: could not find the correct path and reason why .png image could not be
+    displayed onto line messaging map - once deployed seem to not be able to find the picture.
 
 `2-1-2021`
+- Decided to use switch cases to quickly deploy the application.
+- Wrote a detailed README.md file to introduce the application.
+- Get ready to deploy and send project! I learned a lot and there is definitely room for improvement for this BOT.
+- Suggested improvements to-do in own time:
+    - Fix the imagemap bug
+    - Do a wider variety of responses such as image carousel and other things
+    - Add more sense of humor into the project :)
 
