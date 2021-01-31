@@ -15,6 +15,8 @@ const bot = linebot({
   channelAccessToken: 'tpet8lw5YNWo94OACtnY4b5Wro6rKjghAXXROKIY71tBHau9XMwjmxxQn+kr+fDkt9F3YTS8i8mNsqZwFK4EJkhmj6263yuYrZQOgbYeLqUZ1TwN/xErdHRNYSWpVf+ohUjLsSNgocpyxXQNICW4qAdB04t89/1O/w1cDnyilFU='
 });
 
+let baseURL = process.env.BASE_URL;
+
 const linebotParser = bot.parser();
 
 bot.on('message', function (event) {
@@ -50,7 +52,7 @@ function promote(event) {
   if(event.message.text == 'tell me more about him') {
     event.reply({
       type: 'imagemap',
-      baseUrl: 'https://github.com/kevinchunyu/linebot-intro01/tree/main/imgs',
+      baseUrl: `${baseURL}/imgs`,
       altText: 'self-promote',
       baseSize: { height: 1040, width: 1040 },
       actions: [{
